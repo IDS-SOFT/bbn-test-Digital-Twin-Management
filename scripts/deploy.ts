@@ -5,10 +5,10 @@ async function main() {
 
   console.log("DigitalTwinManagement deployed to:", Deployer.address);
 
-  const DigitalTwinManagement = await hre.ethers.getContractFactory("DigitalTwinManagement");
-  const digitalTwinManagement = await DigitalTwinManagement.deploy();
+  const digitalTwinManagementFactory = await hre.ethers.getContractFactory("DigitalTwinManagement");
+  const digitalTwinManagement = await digitalTwinManagementFactory.deploy("enter address here", "value=null", "code=INVALID_ARGUMENT");
 
-  await digitalTwinManagement.deployed();
+  await digitalTwinManagement.waitForDeployment();
 
   console.log("DigitalTwinManagement contract deployed to:", digitalTwinManagement.address);
 
