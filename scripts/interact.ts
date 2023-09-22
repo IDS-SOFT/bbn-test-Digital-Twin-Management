@@ -9,7 +9,7 @@ const contractABI: any[] = digitalTwinManagement.abi;
 
 async function main() {
   const provider = new ethers.JsonRpcProvider(process.env.RPC_NODE_URL || "");
-  const signer = await hre.ethers.getSigner();
+  const signer = await hre.ethers.getSigner("0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199","xyz",123);
   const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
   try {
